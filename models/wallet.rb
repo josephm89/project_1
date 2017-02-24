@@ -22,5 +22,10 @@ class Wallet
     result = wallet['budget'].to_i
   end
 
+  def self.find
+    sql = "SELECT * FROM wallet WHERE id = 1"
+    wallet = SqlRunner.run(sql).first
+    return Wallet.new(wallet)
+  end
 end
 

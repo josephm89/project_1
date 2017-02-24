@@ -11,6 +11,7 @@ get '/' do
   erb(:index)
 end
 
+###########Budget page#########
 get '/wallet' do
   @wallet = Wallet.show
   erb(:"wallet/index")
@@ -20,15 +21,18 @@ end
 post '/wallet' do
   @wallet2 = Wallet.new(params)
   @wallet2.update
-
  redirect '/wallet'
- # erb(:index)
 end
 
 
 
+#######################################
+############TRANSACTIONS#####################
+######################################
+
 ############See All transactions########
 get '/transactions' do
+  @wallet = Wallet.show
   @transactions = Transaction.all
   @tags = Tag.all
   erb(:"transactions/index")
@@ -38,6 +42,11 @@ end
 post '/transactions' do
   @transaction = Transaction.new(params)
   @transaction.save
+  spend = params[:value].to_i
+  @new_wallet = Wallet.find
+  @new_wallet.budget -= spend
+  @new_wallet.update
+
   redirect '/transactions'
 end
 
