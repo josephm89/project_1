@@ -5,18 +5,27 @@ require'./models/transaction'
 require'./models/wallet'
 
 
+
+
 get '/' do
-  @wallet = Wallet.show
   erb(:index)
 end
 
+get '/wallet' do
+  @wallet = Wallet.show
+  erb(:"wallet/index")
+end
+
 ############Set budget######
-post '/' do
+post '/wallet' do
   @wallet2 = Wallet.new(params)
   @wallet2.update
- redirect '/'
+
+ redirect '/wallet'
  # erb(:index)
 end
+
+
 
 ############See All transactions########
 get '/transactions' do
