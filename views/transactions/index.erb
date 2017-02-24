@@ -1,2 +1,6 @@
 helo
 
+<%for transaction in @transactions%>
+<%= transaction.description %>
+<%= transaction.value %>
+<% end%>
