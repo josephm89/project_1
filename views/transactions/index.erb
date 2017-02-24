@@ -3,4 +3,6 @@ helo
 <%for transaction in @transactions%>
 <%= transaction.description %>
 <%= transaction.value %>
+<%= transaction.tag %>
+
 <% end%>

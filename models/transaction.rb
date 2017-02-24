@@ -21,6 +21,8 @@ class Transaction
 
   def tag
     sql = "SELECT * FROM tags WHERE #{tag_id} = tags.id"
-    result = SqlRunner.run(sql).first
+    result = SqlRunner.run(sql)
+    tag = Tag.new( result.first )
+    return tag.name 
   end
 end
