@@ -1,7 +1,12 @@
 nothing here yetttt 
+
+<% @amount = 0 %>
 <p><% for transaction in @transaction%>
 
-  value : <%= transaction.description%>
-
+  Description : <%= transaction.description%>
+  value : <%= transaction.value%>
+  <% @amount += transaction.value%>
   <hr/>
   <% end %></p>
+
+  <%= @amount %>
