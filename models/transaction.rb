@@ -32,12 +32,16 @@ class Transaction
     tag = Tag.new( result.first ) 
   end
 
-
-
-
   def self.delete(id)
     sql = "DELETE FROM transactions WHERE id = #{id}"
     SqlRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM transactions WHERE id = #{id}"
+    x = SqlRunner.run(sql)
+    result = Transaction.new(x.first)
+    return result
   end
 
 end
