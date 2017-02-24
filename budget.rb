@@ -49,17 +49,37 @@ post '/transactions' do
   redirect '/transactions'
 end
 
+##########Delete transaction##################
+post '/transactions/:id/delete' do
+  Transaction.delete(params[:id])
+  redirect '/transactions'
+end
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##############Search by tag#############
 
 get '/transactions/tags/:name/:tag_id' do
-  @transaction = Tag.new({'name' => params[:name],
-    'id' => params[:tag_id].to_i
-    }).transactions
+  # @transaction = Tag.new({'name' => params[:name],
+  #   'id' => params[:tag_id].to_i
+  #   }).transactions
   erb(:"transactions/tags")
 end
-##########tag select
+
 post '/transactions/tags/:name/:tag_id' do
   @transaction = Tag.new({'name' => params[:name],
     'id' => params[:tag_id].to_i
