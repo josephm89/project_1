@@ -1,6 +1,7 @@
 require_relative'../db/sqlrunner'
 class Transaction 
-  attr_reader :description, :value
+  attr_accessor :tag_id
+  attr_reader :description, :value, :id
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @description = options['description']
@@ -16,5 +17,10 @@ class Transaction
   def self.all
     sql = "SELECT * FROM transactions;"
     SqlRunner.run(sql).map{|x| Transaction.new(x)}
+  end
+
+  def tag
+    sql = "SELECT * FROM tags WHERE #{tag_id} = tags.id"
+    result = SqlRunner.run(sql).first
   end
 end
