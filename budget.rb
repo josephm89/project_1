@@ -21,5 +21,5 @@ end
 post '/transactions' do
   @transaction = Transaction.new(params)
   @transaction.save
-  redirect '/'
+  redirect '/transactions'
 end
