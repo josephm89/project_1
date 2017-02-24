@@ -1,23 +1,27 @@
 require'pry'
 require_relative'../models/tag'
-require_relative'../models/transactions'
+require_relative'../models/transaction'
 
 tag1 = Tag.new({
   'name' => 'food'
   })
 
-tag1 = Tag.new({
+tag2 = Tag.new({
   'name' => 'rent'
   })
 
-tag1 = Tag.new({
+tag3 = Tag.new({
   'name' => 'electricity'
   })
 
-tag1 = Tag.new({
+tag4 = Tag.new({
   'name' => 'gas'
   })
 
+tag1.save
+tag2.save
+tag3.save
+tag4.save
 
 
 
@@ -26,3 +30,8 @@ transaction1 = Transaction.new({
   'value' => '20',
   'tag_id' => 'tag1.id'
   })
+
+
+
+binding.pry
+nil
