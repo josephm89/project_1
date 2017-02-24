@@ -28,10 +28,10 @@ tag4.save
 transaction1 = Transaction.new({
   'description' => 'Corner shop',
   'value' => '20',
-  'tag_id' => 'tag1.id'
+  'tag_id' => tag1.id
   })
 
-
+transaction1.save
 
 binding.pry
 nil
