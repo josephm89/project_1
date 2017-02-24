@@ -25,4 +25,10 @@ class Transaction
     tag = Tag.new( result.first )
     return tag.name 
   end
+
+  def delete
+    sql = "DELETE FROM transactions WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
 end

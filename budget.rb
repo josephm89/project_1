@@ -6,20 +6,27 @@ require'./models/transaction'
 get '/' do
   erb(:index)
 end
-
+############See All transactions########
 get '/transactions' do
   @transactions = Transaction.all
   erb(:"transactions/index")
 end
-
+######Bring up create new transaction####
 get '/transactions/new' do
   @transactions = Transaction.all
   @tags = Tag.all
   erb(:"transactions/new")
 end
-
+############Submit new transaction######
 post '/transactions' do
   @transaction = Transaction.new(params)
   @transaction.save
   redirect '/transactions'
 end
+###########Show all tags############
+
+##########Create new tag##############
+
+#########Submit new tag##############
+
+##########Delete tag##################
