@@ -6,6 +6,18 @@ tag1 = Tag.new({
   'name' => 'food'
   })
 
+tag1 = Tag.new({
+  'name' => 'rent'
+  })
+
+tag1 = Tag.new({
+  'name' => 'electricity'
+  })
+
+tag1 = Tag.new({
+  'name' => 'gas'
+  })
+
 
 
 
