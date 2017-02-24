@@ -21,4 +21,9 @@ class Tag
     SqlRunner.run(sql)
   end
 
+  def find
+    sql = "SELECT * FROM tags WHERE id = #{@id}"
+    result = Sqlrunner.run(sql).first
+    return result
+  end
 end
