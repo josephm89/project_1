@@ -1,13 +1,10 @@
-helo <a href="/tags/new">Add new tag</a>
 
 <%for tag in @tags%>
-<%= tag.name %>
-
-<form method="POST" action="/tags/<%=tag.id%>/delete">
-<input type="submit" value="Delete"/>
-</form>
+  <%= tag.name %>
+  <form method="POST" action="/tags/<%=tag.id%>/delete">
+  <input type="submit" value="Delete"/>
+  </form>
 <% end%>
-
 
 <form method="POST" action="/tags">
 <input type="text" name="name">Tag name</input>

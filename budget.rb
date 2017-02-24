@@ -12,18 +12,18 @@ get '/transactions' do
   @tags = Tag.all
   erb(:"transactions/index")
 end
-######Bring up create new transaction####
-# get '/transactions/new' do
-#   @transactions = Transaction.all
-#   @tags = Tag.all
-#   erb(:"transactions/new")
-# end
+
 ############Submit new transaction######
 post '/transactions' do
   @transaction = Transaction.new(params)
   @transaction.save
   redirect '/transactions'
 end
+
+#######################################
+############TAGS#####################
+######################################
+
 ###########Show all tags############
 get '/tags' do
   @tags = Tag.all
@@ -35,7 +35,6 @@ post '/tags' do
   @tag.save
   redirect '/tags'
 end
-#########Submit new tag##############
 
 ##########Delete tag##################
 post '/tags/:id/delete' do

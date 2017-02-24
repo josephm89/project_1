@@ -9,30 +9,16 @@
 
   <label for="select-tag">Tag</label>
     <select id="select-tag" name="tag_id">
-      
     <% for tag in @tags%>
       <option value="<%= tag.id  %>"><%= tag.name %></option>
-
-      <%end%>
-
+    <%end%>
     </select>
 
-
   <input type="submit" value="Add"/>
-
-
-
-
 </form>
-
-
-
-
-helo <a href="/transactions/new">Add new transaction</a>
 
 <%for transaction in @transactions%>
 <%= transaction.description %>
 <%= transaction.value %>
 <%= transaction.tag %>
-
 <% end%>
