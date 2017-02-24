@@ -18,7 +18,8 @@
 </form>
 
 <%for transaction in @transactions%>
-<%= transaction.description %>
-<%= transaction.value %>
-<%= transaction.tag %>
+<p>Description: <%= transaction.description %> 
+Amount: <%= transaction.value %> 
+<%= transaction.tag %></p>
+<hr/>
 <% end%>
