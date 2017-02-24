@@ -29,7 +29,11 @@ get '/tags' do
   erb(:"tags/index")
 end
 ##########Create new tag##############
-
+post '/tags' do
+  @tag = Tag.new(params)
+  @tag.save
+  redirect '/tags'
+end
 #########Submit new tag##############
 
 ##########Delete tag##################
