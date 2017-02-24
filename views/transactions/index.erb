@@ -16,10 +16,11 @@
 
   <input type="submit" value="Add"/>
   </form>
-
+  <% @amount = 0 %>
 <%for transaction in @transactions%>
     <p>Description: <%= transaction.description %> 
     Amount: <%= transaction.value %> 
+    <% @amount += transaction.value%>
     <form method="POST" action="/transactions/tags/<%= transaction.tag%>/<%= transaction.tag_id%>">
     <input type="submit" value="<%= transaction.tag %>"/>
 
@@ -29,3 +30,5 @@
     </form>
     <hr/>
 <% end%>
+
+<%= @amount %>
