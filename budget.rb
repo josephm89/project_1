@@ -6,7 +6,6 @@ require'./models/wallet'
 
 
 
-
 get '/' do
   erb(:index)
 end
@@ -49,6 +48,32 @@ post '/transactions' do
 
   redirect '/transactions'
 end
+
+
+
+
+
+get '/transactions/tags/:name/:tag_id' do
+  @transaction = Tag.new({'name' => params[:name],
+    'id' => params[:tag_id].to_i
+    }).transactions
+  erb(:"transactions/tags")
+end
+##########tag select
+post '/transactions/tags/:name/:tag_id' do
+  @transaction = Tag.new({'name' => params[:name],
+    'id' => params[:tag_id].to_i
+    }).transactions
+
+  erb(:"transactions/tags")
+end
+
+
+
+
+
+
+
 
 #######################################
 ############TAGS#####################

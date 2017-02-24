@@ -20,11 +20,20 @@ class Transaction
   end
 
   def tag
-    sql = "SELECT * FROM tags WHERE #{tag_id} = tags.id"
+    sql = "SELECT * FROM tags WHERE #{@tag_id} = tags.id"
     result = SqlRunner.run(sql)
     tag = Tag.new( result.first )
     return tag.name 
   end
+
+  def tag_class_return
+    sql = "SELECT * FROM tags WHERE #{@tag_id} = tags.id"
+    result = SqlRunner.run(sql)
+    tag = Tag.new( result.first ) 
+  end
+
+
+
 
   def delete
     sql = "DELETE FROM transactions WHERE id = #{@id}"

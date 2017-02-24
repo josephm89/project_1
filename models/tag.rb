@@ -27,4 +27,10 @@ class Tag
     result = Tag.new(x.first)
     return result
   end
+
+  def transactions
+    sql = "SELECT * FROM transactions WHERE transactions.tag_id = #{@id}"
+    result = SqlRunner.run(sql).map{|x| Transaction.new(x)}
+  end
+
 end
