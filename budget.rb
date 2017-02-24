@@ -5,3 +5,6 @@ get '/' do
   erb(:index)
 end
 
+get '/transactions' do
+  erb(:"transactions/index")
+end
