@@ -1,3 +1,15 @@
-<p>Budget App YOO</p>
+<p><%=  @wallet %></p>
+        <p>Your current budget is<%=  %></p>
 
-<p>
+        Set your Budget:
+        <form method="post" action="/">
+
+          <label for="value">Amount</label>
+          <input type="number" name="budget" id="value"/>
+
+          <input type="submit" value="Add"/>
+        </form>
+
+
+
+        <p><%= @wallet %> ee</p>

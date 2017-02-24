@@ -1,5 +1,6 @@
 require'pry'
 require_relative'../models/tag'
+require_relative'../models/wallet'
 require_relative'../models/transaction'
 
 tag1 = Tag.new({
@@ -31,7 +32,14 @@ transaction1 = Transaction.new({
   'tag_id' => tag1.id
   })
 
+wallet = Wallet.new({
+  'budget' => '0',
+  'id' => '1'
+  })
+wallet.save
 transaction1.save
+
+
 
 binding.pry
 nil

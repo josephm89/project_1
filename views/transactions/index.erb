@@ -1,5 +1,5 @@
 
-<form method="POST" action="/transactions">
+  <form method="POST" action="/transactions">
 
   <label for="description">Description</label>
   <input type="text" name="description" id="description"/>
@@ -15,7 +15,7 @@
     </select>
 
   <input type="submit" value="Add"/>
-</form>
+  </form>
 
 <%for transaction in @transactions%>
 <p>Description: <%= transaction.description %> 

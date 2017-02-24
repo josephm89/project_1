@@ -2,10 +2,22 @@ require'sinatra'
 require'sinatra/contrib/all'
 require'./models/tag'
 require'./models/transaction'
+require'./models/wallet'
+
 
 get '/' do
+  @wallet = Wallet.show
   erb(:index)
 end
+
+############Set budget######
+post '/' do
+  @wallet2 = Wallet.new(params)
+  @wallet2.update
+ redirect '/'
+ # erb(:index)
+end
+
 ############See All transactions########
 get '/transactions' do
   @transactions = Transaction.all
