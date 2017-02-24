@@ -24,7 +24,10 @@ post '/transactions' do
   redirect '/transactions'
 end
 ###########Show all tags############
-
+get '/tags' do
+  @tags = Tag.all
+  erb(:"tags/index")
+end
 ##########Create new tag##############
 
 #########Submit new tag##############
