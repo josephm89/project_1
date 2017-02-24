@@ -1,6 +1,6 @@
 require_relative'../db/sqlrunner'
 class Transaction 
-  
+
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @description = options['description']
@@ -13,4 +13,8 @@ class Transaction
     @id = SqlRunner.run(sql).first['id']
   end
 
+  def self.all
+    sql = "SELECT * FROM transactions;"
+    @transactions = SqlRunner.run(sql).map{|x| Transaction.new(x)}
+  end
 end
