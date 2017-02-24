@@ -16,14 +16,15 @@ class Tag
     SqlRunner.run(sql).map{|x| Tag.new(x)}
   end
 
-  def delete
-    sql = "DELETE FROM tags WHERE id = #{@id}"
+  def self.delete(id)
+    sql = "DELETE FROM tags WHERE id = #{id}"
     SqlRunner.run(sql)
   end
 
-  def find
-    sql = "SELECT * FROM tags WHERE id = #{@id}"
-    result = Sqlrunner.run(sql).first
+  def self.find(id)
+    sql = "SELECT * FROM tags WHERE id = #{id}"
+    x = SqlRunner.run(sql)
+    result = Tag.new(x.first)
     return result
   end
 end

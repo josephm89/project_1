@@ -1,6 +1,0 @@
-helo <a href="/tags/new">Add new tag</a>
-
-<%for tag in @tags%>
-<%= tag.name %>
-
-<% end%>

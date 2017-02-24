@@ -33,3 +33,7 @@ end
 #########Submit new tag##############
 
 ##########Delete tag##################
+post '/tags/:id/delete' do
+  Tag.delete(params[:id])
+  redirect '/tags'
+end
