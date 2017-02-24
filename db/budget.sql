@@ -9,5 +9,6 @@ CREATE TABLE tags (
 CREATE TABLE transactions (
   id SERIAL8 PRIMARY KEY,
   description VARCHAR(255),
+  value INT8,
   tag_id INT4 REFERENCES tags(id)
 );
