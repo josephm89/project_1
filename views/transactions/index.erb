@@ -1,22 +1,28 @@
+
+
 <p>Full budget: <%= @wallet%></p>
+
   <form method="POST" action="/transactions">
 
-  <label for="description">Description</label>
-  <input type="text" name="description" id="description"/>
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description"/>
 
-  <label for="value">Amount</label>
-  <input type="number" name="value" id="value"/>
+    <label for="value">Amount</label>
+    <input type="number" name="value" id="value"/>
 
-  <label for="select-tag">Tag</label>
-    <select id="select-tag" name="tag_id">
-    <% for tag in @tags%>
-      <option value="<%= tag.id  %>"><%= tag.name %></option>
-    <%end%>
-    </select>
+    <label for="select-tag">Tag</label>
+      <select id="select-tag" name="tag_id">
+      <% for tag in @tags%>
+        <option value="<%= tag.id  %>"><%= tag.name %></option>
+      <%end%>
+      </select>
 
-  <input type="submit" value="Add"/>
+    <input type="submit" value="Add"/>
+
   </form>
+
   <% @amount = 0 %>
+
 <%for transaction in @transactions%>
     <p>Description: <%= transaction.description %> 
     Amount: <%= transaction.value %> 
@@ -31,11 +37,10 @@
     <hr/>
 <% end%>
 
-<%= @amount %>
-<hr/>
-<div style="background-color:blue;width:<%@amount%>px;height:20px;"/>
-         
+  <%= @amount %>
 
-<div style="background-color:green;width:<%=@wallet.to_i%>px;height:20px;"/>
-<hr/>
-                
+
+    <div style="background-color:blue;width:250px;height:20px;position: absolute; top: 5px; left: 0; right: 0; border: none; z-index: 50;">
+             <% @spending_size = (@amount.to_f/@wallet.to_i)*100 %>
+    <div style="background-color:green;width:<%=@spending_size%>%;height:20px;"/>
+    </div>
