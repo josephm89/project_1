@@ -16,5 +16,8 @@ CREATE TABLE transactions (
 
 CREATE TABLE wallet (
   budget INT8,
-  id INT4
+  id INT4 PRIMARY KEY
 );
+
+INSERT INTO wallet (budget, id) VALUES (0 , 1);
+INSERT INTO wallet (budget, id) VALUES (0 , 2);

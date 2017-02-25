@@ -34,7 +34,7 @@ transaction1 = Transaction.new({
 
 wallet = Wallet.new({
   'budget' => '0',
-  'id' => '1'
+  'id' => '2'
   })
 wallet.save
 transaction1.save

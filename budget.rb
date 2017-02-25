@@ -10,13 +10,16 @@ end
 
 ###########Budget page#########
 get '/wallet' do
-  @wallet = Wallet.show
+  @wallet_current = Wallet.show_current_money
+  @wallet_full = Wallet.show_full_money
   erb(:"wallet/index")
 end
 
 ############Set budget######
 post '/wallet' do
-  @wallet2 = Wallet.new(params)
-  @wallet2.update
+  @wallet = Wallet.new(params)
+  @wallet.update_current
+  @wallet_full = Wallet.new(params)
+  @wallet_full.update_full
  redirect '/wallet'
 end

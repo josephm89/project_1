@@ -6,7 +6,9 @@ require_relative'../models/wallet'
 
 ############See All transactions########
 get '/transactions' do
-  @wallet = Wallet.show
+  @wallet_full = Wallet.show_full_money
+  @wallet_current = Wallet.show_current_money
+
   @transactions = Transaction.all
   @tags = Tag.all
   erb(:"transactions/index")
@@ -17,9 +19,9 @@ post '/transactions' do
   @transaction = Transaction.new(params)
   @transaction.save
   spend = params[:value].to_i
-  @new_wallet = Wallet.find
+  @new_wallet = Wallet.find_current
   @new_wallet.budget -= spend
-  @new_wallet.update
+  @new_wallet.update_current
   redirect '/transactions'
 end
 
@@ -27,9 +29,9 @@ end
 post '/transactions/:id/delete' do
   deleted = Transaction.find(params[:id])
   amount = deleted.value
-  @new_wallet = Wallet.find
+  @new_wallet = Wallet.find_current
   @new_wallet.budget += amount
-  @new_wallet.update
+  @new_wallet.update_current
   Transaction.delete(params[:id])
   redirect '/transactions'
 end
