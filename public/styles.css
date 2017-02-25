@@ -1,0 +1,22 @@
+body {
+  background-image: url("bg.jpg");
+  /*background-color:#02162f;*/
+  color: white;
+
+}
+
+.page {
+  border-radius: 180px;
+  border: 50px solid hsla(0,0%,4%,.4);
+  background: white;
+  background-clip: padding-box;
+
+
+  position:fixed;
+  top: 70px;
+  right: 20%;
+  left: 20%; 
+  height: 500px;
+  width: 800px;
+  background-color:#02162f;
+}
