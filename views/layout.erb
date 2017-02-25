@@ -5,20 +5,19 @@
   <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
+  <div class="navbar">
   <nav>
     <ul>
       <li>
-        <a href="/">Front Page</a>
-        <a href="/transactions">All your transactions</a>
-        <a href="/tags">tags</a>
-        <a href="/wallet">budget adjust</a>
-        
+        <a class="n" href="/">Home</a>
+        <a class="n" href="/transactions">Transactions</a>
+        <a class="n" href="/tags">Tags</a>
+        <a class="n" href="/wallet">Budget</a>
       </li>
- 
     </ul>
-
   </nav>
-  <hr/>
+</div>
+
   <div class="page">
 <%= yield%>
 </div>

@@ -2,6 +2,7 @@ body {
   background-image: url("bg.jpg");
   /*background-color:#02162f;*/
   color: white;
+  height: 1200px;
 
 }
 
@@ -12,11 +13,56 @@ body {
   background-clip: padding-box;
 
 
-  position:fixed;
+  position:absolute;
   top: 70px;
   right: 20%;
   left: 20%; 
-  height: 500px;
+ 
   width: 800px;
   background-color:#02162f;
 }
+
+.navbar {
+color: yellow;
+position: fixed;
+top: 180px;
+left: 120px;
+float: left;
+width: 30px;
+
+
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background-color: #02162f;
+    border-radius: 180px;
+
+}
+
+li a {
+    display: block;
+    color: white;    /*textcolor*/
+    padding: 8px 16px;
+    text-decoration: none; /* no underline*/
+}
+
+/* Change the link color on hover */
+li a:hover {
+    border-radius: 90px;
+    background-color: blue;
+    color: white;
+}
+
+
+
+
+
+
+
+
+

@@ -24,7 +24,7 @@
   </form>
 
   <% @amount = 0 %>
-
+  
 <%for transaction in @transactions%>
     <p>Description: <%= transaction.description %> 
     Amount: <%= transaction.value %> 
@@ -38,6 +38,12 @@
     </form>
     <hr/>
 <% end%>
+
+
+ 
+
+
+
 
   <p>Spent total: <%= @amount %></p>
 
@@ -69,3 +75,14 @@
     width:<%=@spending_size%>%;
     height:20px;"/>
     </div>
+
+
+
+
+
+
+
+
+
+
+    
