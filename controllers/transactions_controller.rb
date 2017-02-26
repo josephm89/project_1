@@ -5,14 +5,14 @@ require_relative'../models/transaction'
 require_relative'../models/wallet'
 
 ############See All transactions########
-get '/transactions' do
-  @wallet_full = Wallet.show_full_money
-  @wallet_current = Wallet.show_current_money
+# get '/transactions' do
+#   @wallet_full = Wallet.show_full_money
+#   @wallet_current = Wallet.show_current_money
 
-  @transactions = Transaction.all
-  @tags = Tag.all
-  erb(:"transactions/index")
-end
+#   @transactions = Transaction.all
+#   @tags = Tag.all
+#   erb(:"transactions/index")
+# end
 
 ############Submit new transaction######
 post '/transactions' do
@@ -22,7 +22,7 @@ post '/transactions' do
   @new_wallet = Wallet.find_current
   @new_wallet.budget -= spend
   @new_wallet.update_current
-  redirect '/transactions'
+  redirect '/'
 end
 
 ##########Delete transaction##################
@@ -33,7 +33,7 @@ post '/transactions/:id/delete' do
   @new_wallet.budget += amount
   @new_wallet.update_current
   Transaction.delete(params[:id])
-  redirect '/transactions'
+  redirect '/'
 end
 
 ##############Search by tag#############
