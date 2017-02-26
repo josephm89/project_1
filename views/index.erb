@@ -2,7 +2,7 @@
 
 <div class="header"><%#header div%>
 
-    <div><%#Wallet index%>
+    <div id="setbudget"><%#Set Budget%>
         <p>Your current budget is <%= @wallet_current %></p>
         <p>Your full budget is <%=  @wallet_full%></p>
         Set your Budget:
@@ -13,10 +13,11 @@
 
           <input type="submit" value="Add"/>
         </form>
-    </div><%#Wallet index%>
+    </div><%#Set Budget%>
 
+    <div id="title">Title</div>
 
-    <div><%#Tag index%>
+    <div id="createtag"><%#Create Tag%>
         <%for tag in @tags%>
           <%= tag.name %>
           <form method="POST" action="/tag/<%=tag.id%>/delete">
@@ -24,12 +25,11 @@
           </form>
         <% end%>
 
-        <form method="POST" action="/tag">
-        <input type="text" name="name">Tag name</input>
-        <input type="submit" value="Add new"/>
-        </form>
-
-    </div><%#Tag index%>
+          <form method="POST" action="/tag">
+          <input type="text" name="name">Tag name</input>
+          <input type="submit" value="Add new"/>
+          </form>
+    </div><%#Create Tag%>
 
 
 
@@ -44,9 +44,8 @@
 <%############################################################%>
 <%############################################################%>
 <%############################################################%>
-<div class="transactions">
+<div class="transactions"><%#MIDDLE%>
 <% @wallet%>
-<%= %>
 
 <p>Full budget: <%= @wallet_full%></p>
 <p>Remaining: <%= @wallet_current%></p>
@@ -72,23 +71,25 @@
 
   <% @amount = 0 %>
   
-<%for transaction in @transactions%>
-    <p>Description: <%= transaction.description %> 
-    Amount: <%= transaction.value %> 
-    <% @amount += transaction.value%>
-    <form method="POST" action="/transactions/tags/<%= transaction.tag%>/<%= transaction.tag_id%>">
-    <input type="submit" value="<%= transaction.tag %>"/>
+  <%for transaction in @transactions%>
+      <p>Description: <%= transaction.description %> 
+      Amount: <%= transaction.value %> 
+      <% @amount += transaction.value%>
+      <form method="POST" action="/transactions/tags/<%= transaction.tag%>/<%= transaction.tag_id%>">
+      <input type="submit" value="<%= transaction.tag %>"/>
 
-    </form></p>
-    <form method="POST" action="/transactions/<%=transaction.id%>/delete">
-    <input type="submit" value="X"/>
-    </form>
-    <hr/>
-<% end%>
+      </form></p>
+      <form method="POST" action="/transactions/<%=transaction.id%>/delete">
+      <input type="submit" value="X"/>
+      </form>
+      <hr/>
+  <% end%>
 
-</div>
+  </div><%#MIDDLE%>
 
+<div id="budgetbar"><%#budget bar%>
   <p>Spent total: <%= @amount %></p>
+    
     <div style="
     background-color:blue;
     width:250px;
@@ -101,13 +102,14 @@
     z-index: 50;
     box-shadow: 0px 0px 5px black;
     ">
+
   <% @spending_size = 100-((@wallet_current.to_f/@wallet_full)*100) %>
 
-  <% if @spending_size > 100 %>
-  <%      @color = "red"%>
-  <% else %>
-  <%      @color = "green"%>
-  <%  end %>
+    <% if @spending_size > 100 %>
+    <%      @color = "red"%>
+    <% else %>
+    <%      @color = "green"%>
+    <% end %>
 
     <div style="
     background-color:<%=@color%>;
@@ -116,7 +118,7 @@
     </div>
 
 
-
+</div><%#budget bar%>
 
 
 
