@@ -1,55 +1,9 @@
 
-
-<div class="header"><%#header div%>
-
-    <div id="setbudget"><%#Set Budget%>
-        <p>Your current budget is <%= @wallet_current %></p>
-        <p>Your full budget is <%=  @wallet_full%></p>
-        Set your Budget:
-        <form method="POST" action="/">
-
-          <label for="value">Amount</label>
-          <input type="number" name="budget" id="value"/>
-
-          <input type="submit" value="Add"/>
-        </form>
-    </div><%#Set Budget%>
-
-    <div id="title">Title</div>
-
-    <div id="createtag"><%#Create Tag%>
-        <%for tag in @tags%>
-          <%= tag.name %>
-          <form method="POST" action="/tag/<%=tag.id%>/delete">
-          <input type="submit" value="Delete"/>
-          </form>
-        <% end%>
-
-          <form method="POST" action="/tag">
-          <input type="text" name="name">Tag name</input>
-          <input type="submit" value="Add new"/>
-          </form>
-    </div><%#Create Tag%>
-
-
-
-
-
-
-</div><%#header div-end%>
-
-<%############################################################%>
-<%############################################################%>
-<%############################################################%>
-<%############################################################%>
-<%############################################################%>
 <%############################################################%>
 <div class="transactions"><%#MIDDLE%>
-<% @wallet%>
-
-<p>Full budget: <%= @wallet_full%></p>
-<p>Remaining: <%= @wallet_current%></p>
-
+  <% @wallet%>
+Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
+<hr/>
   <form method="POST" action="/transactions">
 
     <label for="description">Description</label>
@@ -68,9 +22,9 @@
     <input type="submit" value="Add"/>
 
   </form>
-
+<hr/>
   <% @amount = 0 %>
-  
+
   <%for transaction in @transactions%>
       <p>Description: <%= transaction.description %> 
       Amount: <%= transaction.value %> 
@@ -84,46 +38,81 @@
       </form>
       <hr/>
   <% end%>
-
   </div><%#MIDDLE%>
 
-<div id="budgetbar"><%#budget bar%>
-  <p>Spent total: <%= @amount %></p>
-    
-    <div style="
-    background-color:blue;
-    width:250px;
-    height:20px;
-    position: absolute;
-    top: 50px; 
-    left: auto; 
-    right: auto; 
-    border: 20px;
-    z-index: 50;
-    box-shadow: 0px 0px 5px black;
-    ">
+<section class="header"><%#header div%>
+<%##################SETBUDGET#####################%>
+  <div class="setbudget">
+        <input type="checkbox" id="toggle-budget">
+        <label for="toggle-budget">Adjust Budget</label>
+        <div class="content">
+          <p>Your current budget is <%= @wallet_current %></p>
+          <p>Your full budget is <%=  @wallet_full%></p>
+          Set your Budget:
+          <form method="POST" action="/">
 
-  <% @spending_size = 100-((@wallet_current.to_f/@wallet_full)*100) %>
+            <label for="value">Amount</label>
+            <input type="number" name="budget" id="value"/>
 
-    <% if @spending_size > 100 %>
-    <%      @color = "red"%>
-    <% else %>
-    <%      @color = "green"%>
-    <% end %>
+            <input type="submit" value="Add"/>
+          </form>
+        </div>
+  </div>
+<%##################CREAT TAG#####################%>
+  <div class="createtag">
+        <input type="checkbox" id="toggle-tag">
+        <label for="toggle-tag">Create Label</label>
+        <div class="content">
+            <%for tag in @tags%>
+              <%= tag.name %>
+              <form method="POST" action="/tag/<%=tag.id%>/delete">
+                <input type="submit" value="Delete"/>
+              </form>
+            <% end%>
+              <form method="POST" action="/tag">
+                <input type="text" name="name">Tag name</input>
+                <input type="submit" value="Add new"/>
+              </form>
+      </div>
+  </div>
 
-    <div style="
-    background-color:<%=@color%>;
-    width:<%=@spending_size%>%;
-    height:20px;"/>
+
+  <%##################TITLE#####################%>
+
+    <div id="title-bar">
+    <div id ="title">
+      Title
+    </div>
     </div>
 
+  <%##################BUDGET BAR#####################%>
 
-</div><%#budget bar%>
+    <div id="budgetbar"><%#budget bar%>
+        <div style="
+        border-radius: 90px;
+        background-color:#aab2a9;
+        width:720px;
+        height:20px;
+        position: absolute; 
+        z-index: 50;
+        box-shadow: 0px 0px 12px black;">
 
+      <% @spending_size = 100-((@wallet_current.to_f/@wallet_full)*100) %>
 
+        <% if @spending_size > 100 %>
+        <%      @color = "red"%>
+        <% else %>
+        <%      @color = "#718778"%>
+        <% end %>
 
-
-
-
+        <div style="
+        border-radius: 90px;
+        background-color:<%=@color%>;
+        width:<%=@spending_size%>%;
+        height:20px;
+        box-shadow: 0px 0px 10px green;"/>
+        </div>
+    </div><%#budget bar%>
+</section><%#header div-end%>
 
     

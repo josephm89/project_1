@@ -1,42 +1,81 @@
 body {
-  background-image: url("bg.jpg");
-  /*background-color:#02162f;*/
+  /*background-image: url("bg.jpg");*/
+  background-color:silver;
   height: 1200px;
 
 }
 
 .transactions {
-  /*position:fixed;*/
-
-  color:white;
-  border-radius: 180px;
-  border: 50px solid hsla(0,0%,4%,.4);
+  border-radius: 10px;
+  border: 20px solid hsla(0,0%,4%,.4);
   background: white;
   background-clip: padding-box;
-
-
   position:absolute;
-  top: 70px;
+  top: 53px;
   right: 20%;
   left: 20%; 
- 
-  width: 800px;
-  background-color:#02162f;
+  padding:30px;
+  width: 670px;
+  background-color:silver;
+  z-index: 1;
 }
-
-
 
 .header {
-  background-color: white;
-
-
-
+  width: 1260px;
+  height: 50px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-#setbudget{}
-#title{}
-#createtag{}
-#budgetbar {}
+.setbudget{
+position:absolute;
+width:180px;
+height:45px;
+}
 
+#title-bar{
+position:absolute;
+left:200px;
+width:850px;
+height:20px;
+}
 
+#title {
+text-align: center;
+}
 
+.createtag{
+position:absolute;
+left:1060px;
+width:180px;
+height:45px;
+}
+
+#budgetbar {
+position:absolute;
+top:25px;
+left:271px;
+width:830px;
+height:20px;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox] ~ label {
+  height: 45px;
+  display: block;
+}
+.content {
+  opacity: 0;
+  height:0;
+  display: block;
+}
+input[type=checkbox]:checked ~ label ~ .content { 
+  background: silver;
+  opacity: 100;
+  height: 200px;
+  padding: 16px;
+  display: block;
+}
