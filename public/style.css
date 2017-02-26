@@ -1,31 +1,41 @@
 body {
   /*background-image: url("bg.jpg");*/
   background-color:silver;
-  height: 1200px;
+  /*height: 1200px;*/
 
 }
 
 .transactions {
-  border-radius: 10px;
-  border: 20px solid hsla(0,0%,4%,.4);
+  /*border-right-radius: 10px;*/
+  border-bottom: 20px solid hsla(0,0%,4%,.4);
+  border-left: 20px solid hsla(0,0%,4%,.4);
+  border-right: 20px solid hsla(0,0%,4%,.4);
+  
+
   background: white;
   background-clip: padding-box;
   position:absolute;
-  top: 53px;
+  top: 68px;
   right: 20%;
   left: 20%; 
   padding:30px;
   width: 670px;
   background-color:silver;
-  z-index: 1;
+  z-index: -61;
 }
 
 .header {
-  width: 1260px;
+  background-color: silver;
+  width: 1290px;
   height: 50px;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 0;
+  margin-top: -10px;
+
+  border-bottom: 20px solid hsla(0,0%,4%,.4);
+  background-clip: padding-box;
 }
 
 .setbudget{
@@ -47,14 +57,14 @@ text-align: center;
 
 .createtag{
 position:absolute;
-left:1060px;
+left:1110px;
 width:180px;
 height:45px;
 }
 
 #budgetbar {
 position:absolute;
-top:25px;
+top:29px;
 left:271px;
 width:830px;
 height:20px;
@@ -78,4 +88,8 @@ input[type=checkbox]:checked ~ label ~ .content {
   height: 200px;
   padding: 16px;
   display: block;
+  border: 20px solid hsla(0,0%,4%,.4);
+  background-clip: padding-box;
+  position: relative;
+  top:25px;
 }
