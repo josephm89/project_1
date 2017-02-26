@@ -1,12 +1,14 @@
 body {
   background-image: url("bg.jpg");
   /*background-color:#02162f;*/
-  color: black;
   height: 1200px;
 
 }
 
 .transactions {
+  /*position:fixed;*/
+
+  color:white;
   border-radius: 180px;
   border: 50px solid hsla(0,0%,4%,.4);
   background: white;
@@ -24,6 +26,12 @@ body {
 
 
 
+.header {
+  background-color: white;
+
+
+
+}
 
 
 
