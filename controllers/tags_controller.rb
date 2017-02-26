@@ -9,14 +9,14 @@ require_relative'../models/wallet'
 ######################################
 
 ##########Create new tag##############
-post '/' do
+post '/tag' do
   @tag = Tag.new(params)
   @tag.save
   redirect '/'
 end
 
 ##########Delete tag##################
-post '/:id/delete' do
+post '/tag/:id/delete' do
   Tag.delete(params[:id])
   redirect '/'
 end

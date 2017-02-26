@@ -1,33 +1,35 @@
 
 
 <div><%#header div%>
-<div><%#Wallet index%>
-<p>Your current budget is <%= @wallet_current %></p>
-<p>Your full budget is <%=  @wallet_full%></p>
-Set your Budget:
-<form method="post" action="/">
 
-  <label for="value">Amount</label>
-  <input type="number" name="budget" id="value"/>
+    <div><%#Wallet index%>
+        <p>Your current budget is <%= @wallet_current %></p>
+        <p>Your full budget is <%=  @wallet_full%></p>
+        Set your Budget:
+        <form method="POST" action="/">
 
-  <input type="submit" value="Add"/>
-</form>
-</div><%#Wallet index%>
+          <label for="value">Amount</label>
+          <input type="number" name="budget" id="value"/>
 
-<div><%#Tag index%>
-<%for tag in @tags%>
-  <%= tag.name %>
-  <form method="POST" action="/<%=tag.id%>/delete">
-  <input type="submit" value="Delete"/>
-  </form>
-<% end%>
+          <input type="submit" value="Add"/>
+        </form>
+    </div><%#Wallet index%>
 
-<form method="POST" action="/">
-<input type="text" name="name">Tag name</input>
-<input type="submit" value="Add new"/>
-</form>
 
-</div><%#Tag index%>
+    <div><%#Tag index%>
+        <%for tag in @tags%>
+          <%= tag.name %>
+          <form method="POST" action="/tag/<%=tag.id%>/delete">
+          <input type="submit" value="Delete"/>
+          </form>
+        <% end%>
+
+        <form method="POST" action="/tag">
+        <input type="text" name="name">Tag name</input>
+        <input type="submit" value="Add new"/>
+        </form>
+
+    </div><%#Tag index%>
 
 
 
@@ -36,8 +38,13 @@ Set your Budget:
 
 </div><%#header div-end%>
 
-
-
+<%############################################################%>
+<%############################################################%>
+<%############################################################%>
+<%############################################################%>
+<%############################################################%>
+<%############################################################%>
+<div class="transactions">
 <% @wallet%>
 <%= %>
 
@@ -79,6 +86,7 @@ Set your Budget:
     <hr/>
 <% end%>
 
+</div>
 
   <p>Spent total: <%= @amount %></p>
     <div style="

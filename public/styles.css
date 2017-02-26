@@ -1,12 +1,12 @@
 body {
   background-image: url("bg.jpg");
   /*background-color:#02162f;*/
-  color: white;
+  color: black;
   height: 1200px;
 
 }
 
-.page {
+.transactions {
   border-radius: 180px;
   border: 50px solid hsla(0,0%,4%,.4);
   background: white;
@@ -22,41 +22,6 @@ body {
   background-color:#02162f;
 }
 
-.navbar {
-color: yellow;
-position: fixed;
-top: 180px;
-left: 120px;
-float: left;
-width: 30px;
-
-
-
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100px;
-    background-color: #02162f;
-    border-radius: 180px;
-
-}
-
-li a {
-    display: block;
-    color: white;    /*textcolor*/
-    padding: 8px 16px;
-    text-decoration: none; /* no underline*/
-}
-
-/* Change the link color on hover */
-li a:hover {
-    border-radius: 90px;
-    background-color: blue;
-    color: white;
-}
 
 
 
