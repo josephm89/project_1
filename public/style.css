@@ -6,12 +6,7 @@ body {
 }
 
 .transactions {
-  /*border-right-radius: 10px;*/
-  border: 20px solid darkgrey;
-  /*border-left: 20px solid darkgrey;
-  border-right: 20px solid darkgrey;
-  */
-
+  border: 20px solid #5e664d;
   background: white;
   background-clip: padding-box;
   position:absolute;
@@ -34,7 +29,7 @@ body {
   z-index: 0;
   margin-top: -10px;
 
-  border-bottom: 20px solid darkgrey;
+  border-bottom: 20px solid #5e664d;
   background-clip: padding-box;
 }
 
@@ -54,10 +49,13 @@ height:20px;
 
 #title {
 text-align: center;
+font-family: 'Baloo', cursive;
+font-size: 20px;
+color: #5e664d;
 }
 
 .createtag{
-text-align: center;
+/*text-align: center;*/
 position:absolute;
 left:1011px;
 width:180px;
@@ -73,12 +71,42 @@ height:20px;
 }
 
 input[type=checkbox] {
-  display: none;*/
+  z-index: 70;
+  display: none;
+
 }
 input[type=checkbox] ~ label {
+  position: relative;
+  top: 3px;
+  left: 40px;
   height: 45px;
+  width: 120px;
   display: block;
+  text-align: center;
 }
+
+.label-toggle{
+  position: absolute;
+  top: 20px;
+  display: block;
+  height: 30px;
+  width: 120px;
+  font-family: 'Baloo', cursive;
+  font-size: 20px;
+  color: #5e664d;
+}
+.budget-toggle{
+  position: absolute;
+  left: 40px;
+  top: 20px;
+  display: block;
+  height: 30px;
+  width: 140px;
+  font-family: 'Baloo', cursive;
+  font-size: 20px;
+  color: #5e664d;
+}
+
 .content {
   opacity: 0;
   height:0;
@@ -91,15 +119,11 @@ input[type=checkbox]:checked ~ label ~ .content {
   width: 209px;
   padding: 16px;
   display: block;
-  border-bottom: 20px solid darkgrey;
-  border-left: 20px solid darkgrey;
-  border-right: 20px solid darkgrey;
+  border-bottom: 20px solid #5e664d;
+  border-left: 20px solid #5e664d;
+  border-right: 20px solid #5e664d;
   background-clip: padding-box;
   position: relative;
-  top:25px;
+  top:20px;
 }
 
-form{
-
-
-}

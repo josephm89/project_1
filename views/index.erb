@@ -44,7 +44,7 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
 <%##################SETBUDGET#####################%>
   <div class="setbudget">
         <input type="checkbox" id="toggle-budget">
-        <label for="toggle-budget">Adjust Budget</label>
+        <label for="toggle-budget"><section class="budget-toggle">Adjust Budget</section></label>
         <div class="content">
           <p>Your current budget is <%= @wallet_current %></p>
           <p>Your full budget is <%=  @wallet_full%></p>
@@ -61,7 +61,7 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
 <%##################CREAT TAG#####################%>
   <div class="createtag">
         <input type="checkbox" id="toggle-tag">
-        <label for="toggle-tag">Create Label</label>
+        <label for="toggle-tag"><section class="label-toggle">Create Label</section></label>
         <div class="content">
             <%for tag in @tags%>
               <%= tag.name %>
@@ -81,7 +81,7 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
 
     <div id="title-bar">
     <div id ="title">
-      Title
+      Magical Budget App
     </div>
     </div>
 
