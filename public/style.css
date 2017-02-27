@@ -127,3 +127,21 @@ input[type=checkbox]:checked ~ label ~ .content {
   top:20px;
 }
 
+input, select {
+
+  background-color: #718778;
+  border-radius: 90px;
+}
+
+#delete-button {
+  transform: scale(0.7);
+  position: relative;
+  top: -39px;
+  left: 45px;
+
+}
+
+.amount-label {
+  width: 39px;
+
+}

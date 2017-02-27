@@ -10,7 +10,7 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
     <input type="text" name="description" id="description"/>
 
     <label for="value">Amount</label>
-    <input type="number" name="value" id="value"/>
+    <input class ="amount-label" type="number" name="value" id="value"/>
 
     <label for="select-tag">Tag</label>
       <select id="select-tag" name="tag_id">
@@ -34,7 +34,7 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
 
       </form></p>
       <form method="POST" action="/transactions/<%=transaction.id%>/delete">
-      <input type="submit" value="X"/>
+      <input id="delete-button" type="submit" value="X"/>
       </form>
       <hr/>
   <% end%>
