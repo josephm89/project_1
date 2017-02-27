@@ -46,15 +46,14 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
         <input type="checkbox" id="toggle-budget">
         <label for="toggle-budget"><section class="budget-toggle">Adjust Budget</section></label>
         <div class="content">
-          <p>Your current budget is <%= @wallet_current %></p>
-          <p>Your full budget is <%=  @wallet_full%></p>
-          Set your Budget:
+          <%#<p>Your current budget is <%= @wallet_current %><%#</p>%>
+          <p>Your current budget is £ <%=  @wallet_full%></p>
           <form method="POST" action="/">
 
-            <label for="value">Amount</label>
+            <label for="value"></label>
             <input type="number" name="budget" id="value"/>
 
-            <input type="submit" value="Add"/>
+            <input type="submit" value="Set"/>
           </form>
         </div>
   </div>
@@ -64,7 +63,7 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
         <label for="toggle-tag"><section class="label-toggle">Create Label</section></label>
         <div class="content">
             <%for tag in @tags%>
-              <%= tag.name %>
+              <p class="tag-name"><%= tag.name %></p>
               <form method="POST" action="/tag/<%=tag.id%>/delete">
                 <input class="delete-button-tag" type="submit" value="X"/>
               </form>
