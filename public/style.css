@@ -133,12 +133,18 @@ input, select {
   border-radius: 90px;
 }
 
-#delete-button {
+.delete-button {
   transform: scale(0.7);
   position: relative;
   top: -39px;
   left: 45px;
+}
 
+.delete-button-tag {
+  transform: scale(0.7);
+  position: relative;
+  left: 75px;
+  top: -20px;
 }
 
 .amount-label {
