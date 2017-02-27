@@ -102,6 +102,8 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
 
         <% if @spending_size > 100 %>
         <%      @color = "red"%>
+        <%      @spending_size = 100%>
+
         <% else %>
         <%      @color = "#718778"%>
         <% end %>
