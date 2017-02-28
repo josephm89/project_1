@@ -149,7 +149,7 @@ input[type=checkbox]:checked ~ label ~ .content {
 }
 
 /*##################################
-######Create content##################
+######Create tag content##################
 ##################################*/
 
 
@@ -172,6 +172,16 @@ input[type=checkbox]:checked ~ label ~ .content {
   width: 45px;
   font-size: 9px;
 }
+
+.create-tag-text {
+  width: 45px;
+  margin-right: 30px;
+}
+
+
+
+
+
 /*##################################
 ###########TRANSACTIONS###########
 ##################################*/
@@ -234,3 +244,23 @@ hr {
 }
 
 
+/*##################################
+######Spendings by tag###########
+##################################*/
+
+
+.list-tag-all {
+  height: 20px;
+  /*width: 700px;*/
+}
+
+.list-tag-description {
+  position: absolute;
+  left: 90px;
+ 
+}
+
+.list-tag-amount {
+  position: absolute;
+  left: 239px;
+}

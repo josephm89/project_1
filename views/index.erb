@@ -54,9 +54,11 @@
   </div><%#MIDDLE%>
 
 <section class="header"><%#header div%>
+
 <%#################################################%>
 <%##################SETBUDGET#####################%>
 <%#################################################%>
+
   <div class="setbudget">
         <input type="checkbox" id="toggle-budget">
         <label for="toggle-budget"><section class="budget-toggle">Adjust Budget</section></label>
@@ -72,7 +74,11 @@
           </form>
         </div>
   </div>
+
+<%#################################################%>
 <%##################CREAT TAG#####################%>
+<%#################################################%>
+
   <div class="createtag">
     <input type="checkbox" id="toggle-tag">
       <label for="toggle-tag">
@@ -97,7 +103,7 @@
         <% end%>
           
           <form method="POST" action="/tag">
-            <input type="text" name="name"></input>
+            <input class="create-tag-text" type="text" name="name"></input>
             <input type="submit" value="Add new"/>
           </form>
 
@@ -105,7 +111,7 @@
   </div>
 
 
-  <%##################TITLE#####################%>
+<%##################TITLE#####################%>
 
     <div id="title-bar">
     <div id ="title">
@@ -113,7 +119,7 @@
     </div>
     </div>
 
-  <%##################BUDGET BAR#####################%>
+<%##################BUDGET BAR#####################%>
 
     <div id="budgetbar"><%#budget bar%>
         

@@ -1,14 +1,28 @@
 <div class="transactions">
-<% @amount = 0 %>
-<p><% for transaction in @transaction%>
+  <% @amount = 0 %>
+  
+  
+    <% for transaction in @transaction%>
+      <div class="list-tag-all">
 
-  Description : <%= transaction.description%>
-  value : <%= transaction.value%>
-  <% @amount += transaction.value%>
+        <div class="list-tag-description">
+          <%= transaction.description%>
+        </div>
+        <div class="list-tag-amount">
+          <%= transaction.value%>
+        </div>
+      </div>
+      <% @amount += transaction.value%>
+
+      <hr/>
+
+      
+    <% end %>
+  
+      <div>
+      Total spent: £<%= @amount %>
+      </div>
 <hr/>
-  <% end %>
-</p>
+<a href="/" style="color:#718778;">Go Back</a>
 
-  <%= @amount %>
 </div>
-<a href="/">Go Back</a>
