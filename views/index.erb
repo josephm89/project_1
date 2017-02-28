@@ -1,6 +1,7 @@
-
+<%#################################################%>
+<%######################MIDDLE###########################%>
 <%############################################################%>
-<div class="transactions"><%#MIDDLE%>
+<div class="transactions"><%#add new purchase%>
   <% @wallet%>
 Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
 <hr/>
@@ -23,25 +24,40 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
 
   </form>
 <hr/>
+
+<%###########################listing all stuff###################%>
+
   <% @amount = 0 %>
 
   <%for transaction in @transactions%>
-      <p>Description: <%= transaction.description %> 
-      Amount: <%= transaction.value %> 
-      <% @amount += transaction.value%>
-      <form method="POST" action="/transactions/tags/<%= transaction.tag%>/<%= transaction.tag_id%>">
-      <input type="submit" value="<%= transaction.tag %>"/>
+      <div class="list-all">
 
-      </form></p>
-      <form method="POST" action="/transactions/<%=transaction.id%>/delete">
-      <input class="delete-button" type="submit" value="X"/>
-      </form>
+
+        <div class="list-description"><%= transaction.description %>
+        </div>
+
+        <div class="list-amount"><%= transaction.value %>
+  <% @amount += transaction.value%>
+        </div>
+
+        <form method="POST" action="/transactions/<%=transaction.id%>/delete">
+          <input class="delete-button" type="submit" value="X"/>
+        </form>
+      
+        <form method="POST" action="/transactions/tags/<%= transaction.tag%>/<%= transaction.tag_id%>">
+          <input class="list-by-tag" type="submit" value="<%= transaction.tag %>"/>
+        </form>
+
+
+      </div>
       <hr/>
   <% end%>
   </div><%#MIDDLE%>
 
 <section class="header"><%#header div%>
+<%#################################################%>
 <%##################SETBUDGET#####################%>
+<%#################################################%>
   <div class="setbudget">
         <input type="checkbox" id="toggle-budget">
         <label for="toggle-budget"><section class="budget-toggle">Adjust Budget</section></label>
