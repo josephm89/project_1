@@ -76,7 +76,7 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
 <%##################CREAT TAG#####################%>
   <div class="createtag">
         <input type="checkbox" id="toggle-tag">
-        <label for="toggle-tag"><section class="label-toggle">Create Label</section></label>
+        <label for="toggle-tag"><div class="label-toggle">Create Label</div></label>
         <div class="content">
             <%for tag in @tags%>
               <p class="tag-name"><%= tag.name %></p>
