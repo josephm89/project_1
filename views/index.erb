@@ -3,8 +3,7 @@
 <%############################################################%>
 <div class="transactions"><%#add new purchase%>
   <% @wallet%>
-Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
-<hr/>
+
   <form method="POST" action="/transactions">
 
     <label for="description">Description</label>
@@ -117,6 +116,11 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
   <%##################BUDGET BAR#####################%>
 
     <div id="budgetbar"><%#budget bar%>
+        
+        <div class="budget-numbers">
+        <%= @wallet_full%> : <%= @wallet_current%>        
+        </div>
+        
         <div style="
         border-radius: 90px;
         background-color:#aab2a9;
@@ -144,6 +148,7 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
         height:20px;
         box-shadow: 0px 0px 10px green;"/>
         </div>
+
     </div><%#budget bar%>
 </section><%#header div-end%>
 

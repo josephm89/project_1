@@ -61,6 +61,20 @@ input, select {
   width:750px;
   height:20px;
 }
+
+.budget-numbers {
+  position: fixed;
+  left: 606px;
+  /*right: 50%;*/
+  width: 90px;
+  z-index: 199;
+}
+
+
+
+
+
+
 /*#############################################
 ###############Checkboxes##################
 #############################################*/
@@ -189,25 +203,28 @@ input[type=checkbox]:checked ~ label ~ .content {
 
 .list-all {
   height: 20px;
+  /*width: 700px;*/
 }
 
 .list-description {
-  float: left;
-  min-width: 150px;
-  padding-left: 59px;
+  position: absolute;
+  left: 90px;
+ 
 }
 
 .list-amount {
-  float: left;
+  position: absolute;
+  left: 239px;
 }
 
 .list-by-tag {
-  float: right;
-  margin-right: 351px;
+  position: absolute;
+  left:294px;
 }
 
 .delete-button {
-  float: right;
+  position: absolute;
+  left: 660px;
   font-size: 8px;
   transform: scale(0.9);
 }
