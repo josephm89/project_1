@@ -75,20 +75,34 @@ Full budget: <%= @wallet_full%> Remaining: <%= @wallet_current%>
   </div>
 <%##################CREAT TAG#####################%>
   <div class="createtag">
-        <input type="checkbox" id="toggle-tag">
-        <label for="toggle-tag"><div class="label-toggle">Create Label</div></label>
-        <div class="content">
-            <%for tag in @tags%>
-              <p class="tag-name"><%= tag.name %></p>
-              <form method="POST" action="/tag/<%=tag.id%>/delete">
-                <input class="delete-button-tag" type="submit" value="X"/>
-              </form>
-            <% end%>
-              <form method="POST" action="/tag">
-                <input type="text" name="name">Tag name</input>
-                <input type="submit" value="Add new"/>
-              </form>
-      </div>
+    <input type="checkbox" id="toggle-tag">
+      <label for="toggle-tag">
+        <div class="label-toggle">
+          Create Label
+        </div>
+      </label>
+    <div class="content">
+        
+        <%for tag in @tags%>
+          
+          <div>
+            <div class="tag-name">
+              <%= tag.name %>
+            </div>
+          
+          <form method="POST" action="/tag/<%=tag.id%>/delete">
+            <input class="delete-button-tag" type="submit" value="X"/>
+          </form>
+          </div>
+
+        <% end%>
+          
+          <form method="POST" action="/tag">
+            <input type="text" name="name"></input>
+            <input type="submit" value="Add new"/>
+          </form>
+
+    </div>
   </div>
 
 
